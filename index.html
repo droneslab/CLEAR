@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="CLEAR and HOPHY for large-scale off-road terrain abstraction and mission planning.">
+  <meta property="og:title" content="CLEAR + HOPHY: Large-Scale Off-Road Planning">
+  <meta property="og:description" content="Semantic-geometric terrain abstraction and hierarchical hypergraph planning.">
+  <meta property="og:url" content="https://droneslab.github.io/clear-hophy">
+  <meta property="og:image" content="static/images/clear_hophy/clear_framework.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:title" content="CLEAR + HOPHY">
+  <meta name="twitter:description" content="Large-scale off-road planning with terrain abstractions.">
+  <meta name="twitter:image" content="static/images/clear_hophy/clear_framework.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="off-road planning, terrain abstraction, CLEAR, HOPHY, hypergraph planning, robotics">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>CLEAR + HOPHY: Large-Scale Off-Road Planning</title>
+  <link rel="icon" type="image/png" href="static/images/drones_logo.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              <span style="color: rgb(0, 45, 248)">CLEAR + HOPHY</span>: Large-Scale Off-Road Planning with Terrain Abstractions
+            </h1>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://pranayspeed.com" target="_blank">Pranay Meshram</a>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Center for Embodied Autonomy and Robotics (CEAR)<br>University at Buffalo</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <a href="https://www.buffalo.edu/" target="_blank">
+                <img style="width:30%; padding-right: 15px;" src="static/images/ub_logo.png" alt="University at Buffalo logo">
+              </a>
+              <a href="http://drones.cse.buffalo.edu/" target="_blank">
+                <img style="width:30%; height:auto; padding-bottom: 25px;" src="static/images/drones_logo.png" alt="Drones Lab logo">
+              </a>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2601.13361" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>CLEAR Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#videos" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-play"></i></span>
+                    <span>Videos</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+
+            <div class="content has-text-justified">
+              <img style="width:100%;" src="static/images/clear_hophy/clear_all_paths.png" alt="Large-scale planning paths on Wharton, Humphrey, and Rainier maps">
+              <p>
+                Large-scale off-road planning requires repeated route queries over terrain maps spanning 9--100 km<sup>2</sup>. CLEAR builds a reusable semantic-geometric terrain graph, while HOPHY uses hierarchy and hypergraphs to support fast repeated queries, local condition updates, and multi-agent mission planning.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Long-horizon navigation in unstructured environments demands terrain abstractions that scale to tens of square kilometers while preserving semantic and geometric structure. Existing grids scale poorly, while quadtrees can misalign with terrain boundaries and omit landcover semantics that matter for traversability-aware planning.
+            </p>
+            <p>
+              CLEAR addresses the representation problem by constructing a reusable terrain abstraction from landcover and elevation. It produces convex, semantically aligned regions encoded as a terrain-aware graph. HOPHY builds on this abstraction for mission-scale planning: it compresses map-scale terrain into geometric-semantic nodes and coarse regions, then uses typed hyperedges to update terrain constraints under changing weather or agent-specific costs.
+            </p>
+            <p>
+              Across kilometer-scale maps, CLEAR reduces per-query planning time while preserving executability in physics-based simulation. HOPHY further reduces query time to the millisecond regime, supports localized replanning, and enables fast multi-agent path-cost estimation for large off-road missions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">CLEAR: Terrain Abstraction</h2>
+          <div class="content has-text-justified">
+            <p>
+              CLEAR operates through Boundary-Seed Decomposition, recursive plane fitting, and graph encoding. Boundary-Seed Decomposition places seeds in flat regions and along high-entropy semantic boundaries, then uses Voronoi partitioning to form compact convex regions. Plane fitting approximates elevation within each region and recursively subdivides regions whose error exceeds a tolerance. The final abstraction stores landcover, elevation geometry, convex boundaries, and adjacency for graph search.
+            </p>
+            <img style="width:100%;" src="static/images/clear_hophy/clear_framework.png" alt="CLEAR framework overview">
+            <h6>
+              CLEAR pipeline: landcover and elevation input, Boundary-Seed Decomposition, recursive planar surface fitting, and terrain-aware graph encoding.
+            </h6>
+            <img style="width:100%;" src="static/images/clear_hophy/clear_decomposition.png" alt="CLEAR decomposition comparison">
+            <h6>
+              Compared with grid, hexagonal, and quadtree abstractions, CLEAR explicitly targets terrain boundaries and semantic-geometric consistency.
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">HOPHY: Hierarchical Hypergraph Planning</h2>
+          <div class="content has-text-justified">
+            <p>
+              HOPHY targets mission-level settings where path planning is an inner-loop primitive for task allocation, course-of-action comparison, and replanning after terrain changes. Pixel-level planners are accurate but too slow for many repeated queries, while flat abstractions do not provide the hierarchy and localized updates needed for dynamic missions.
+            </p>
+            <p>
+              HOPHY represents terrain with GSNodes and coarse regions. GSNodes aggregate connected terrain with consistent landcover and elevation or grade statistics, and coarse regions group GSNodes for large-scale reasoning. Typed hyperedges encode terrain and contextual constraints such as landcover, grade, weather, and agent feasibility. When conditions change, HOPHY filters affected GSNode sets instead of recomputing the full graph.
+            </p>
+            <img style="width:100%;" src="static/images/clear_hophy/hophy_framework.png" alt="HOPHY hierarchical hypergraph framework">
+            <h6>
+              HOPHY hierarchy and planning framework: terrain inputs are abstracted into Fine Regions, GSNodes, coarse regions, and typed hyperedges for fast multi-agent path planning.
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Results</h2>
+          <div class="content has-text-justified">
+            <p>
+              CLEAR is evaluated on 9--100 km<sup>2</sup> digital terrain maps with physics-based simulation. It reduces per-query planning time over unabstracted raw-grid A* after one-time abstraction and achieves 100% task completion across the evaluated maps in simulation.
+            </p>
+            <img style="width:100%;" src="static/images/clear_hophy/clear_beamng.png" alt="CLEAR planning and simulation results">
+            <h6>
+              CLEAR planning and BeamNG simulation results on Wharton, Humphrey, and Rainier terrain maps.
+            </h6>
+            <p>
+              HOPHY keeps median cost delta at 0.00% relative to pixel-level A* on Wharton, Humphrey, and Rainier, while reducing median query time by 68x--1280x in the paper results. Under rain and localized blockage updates, HOPHY maintains near-A* path quality with sub-186 ms mean query time across all maps.
+            </p>
+            <img style="width:100%;" src="static/images/clear_hophy/hophy_distance_time.png" alt="HOPHY query time and path quality results">
+            <h6>
+              HOPHY remains in the millisecond query-time regime while preserving path quality close to the pixel-level reference.
+            </h6>
+            <img style="width:49%; padding-right: 10px;" src="static/images/clear_hophy/hophy_rain_scatter.png" alt="HOPHY replanning result">
+            <img style="width:49%;" src="static/images/clear_hophy/hophy_multivehicle_frame.png" alt="HOPHY multi-agent mission planning example">
+            <h6>
+              Dynamic replanning and multi-agent mission planning: typed hyperedges support local updates, and the maintained hierarchy enables fast path-cost estimation for heterogeneous teams.
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="videos" class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Video Presentation</h2>
+          <div class="content has-text-centered">
+            <video controls width="100%" style="border-radius: 8px; max-width: 900px;">
+              <source src="static/videos/CLEAR_RAL_suppl_video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <h6>
+              CLEAR supplementary video showing the terrain abstraction and planning pipeline.
+            </h6>
+            <video controls width="100%" style="border-radius: 8px; max-width: 900px; margin-top: 2rem;">
+              <source src="static/videos/HOPHY_Overview.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <h6>
+              HOPHY overview video showing hierarchical hypergraph planning for large-scale off-road missions.
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">BibTeX</h2>
+          <div class="content has-text-justified">
+<pre><code>@article{meshram2026clear,
+  title={CLEAR: Connected Landcover Elevation Abstract Representation for Large-Scale Off-Road Planning},
+  author={Meshram, Pranay and others},
+  year={2026}
+}
+
+@article{meshram2026hophy,
+  title={HOPHY: Hierarchical Off-Road Planning using Hypergraphs},
+  author={Meshram, Pranay and others},
+  year={2026}
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
