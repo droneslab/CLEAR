@@ -54,7 +54,8 @@
             </div>
 
             <div class="is-size-5 publication-authors">
-              <span class="author-block">Center for Embodied Autonomy and Robotics (CEAR)<br>University at Buffalo</span>
+              <span class="author-block">Department of Computer Science and Engineering, University at Buffalo</span><br>
+              <span class="author-block">Department of Mechanical and Aerospace Engineering, University at Buffalo</span>
             </div>
 
             <div class="is-size-5 publication-authors">
@@ -155,6 +156,30 @@
             <h6>
               HOPHY hierarchy and planning framework: terrain inputs are abstracted into Fine Regions, GSNodes, coarse regions, and typed hyperedges for fast multi-agent path planning.
             </h6>
+            <h3 class="title is-4 path-visualization-title">Path Planned Visualization</h3>
+            <div class="path-visualization-grid">
+              <figure>
+                <img src="static/images/clear_hophy/wharton_pair0_isometric_flat_hierarchy_tight.gif" alt="HOPHY planned path visualization on Wharton">
+                <figcaption>
+                  <strong>Wharton</strong>
+                  <span>HOPHY expands the hierarchy from coarse regions to GSNodes, then refines the selected corridor into a continuous path between the start and goal.</span>
+                </figcaption>
+              </figure>
+              <figure>
+                <img src="static/images/clear_hophy/humphrey_pair0_isometric_flat_hierarchy_tight.gif" alt="HOPHY planned path visualization on Humphrey">
+                <figcaption>
+                  <strong>Humphrey</strong>
+                  <span>The search progresses over a larger terrain abstraction, pruning irrelevant regions before committing to the feasible route corridor.</span>
+                </figcaption>
+              </figure>
+              <figure>
+                <img src="static/images/clear_hophy/ub_campus_pair1_isometric_flat_hierarchy_tight.gif" alt="HOPHY planned path visualization on UB Campus">
+                <figcaption>
+                  <strong>UB Campus</strong>
+                  <span>The same coarse-to-fine query process transfers to a campus-scale map, illustrating route generation across compact local terrain.</span>
+                </figcaption>
+              </figure>
+            </div>
           </div>
         </div>
       </div>
@@ -181,8 +206,13 @@
             <h6>
               HOPHY remains in the millisecond query-time regime while preserving path quality close to the pixel-level reference.
             </h6>
-            <img style="width:49%; padding-right: 10px;" src="static/images/clear_hophy/hophy_rain_scatter.png" alt="HOPHY replanning result">
-            <img style="width:49%;" src="static/images/clear_hophy/hophy_multivehicle_frame.png" alt="HOPHY multi-agent mission planning example">
+            <div class="results-media-row">
+              <img src="static/images/clear_hophy/hophy_rain_scatter.png" alt="HOPHY replanning result">
+              <video autoplay muted loop playsinline controls aria-label="HOPHY COA animation for 5 agents and 50 tasks">
+                <source src="static/videos/animation_multivehicle_Wharton.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
             <h6>
               Dynamic replanning and multi-agent mission planning: typed hyperedges support local updates, and the maintained hierarchy enables fast path-cost estimation for heterogeneous teams.
             </h6>
