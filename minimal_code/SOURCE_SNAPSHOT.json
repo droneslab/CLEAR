@@ -1,0 +1,25 @@
+{
+  "clear_core_git_commit": "2f3b3c3",
+  "clear_core_commit_subject": "Latest code for CLEAR",
+  "paper_result_sources": {
+    "wharton": "Off-Road-Abstraction/Framework/results/planner/all_results_1_flatness_0_20.csv",
+    "humphreys": "Off-Road-Abstraction/Framework/results/planner/all_results_3_20.csv",
+    "rainier": "Off-Road-Abstraction/Framework/results/planner/all_results_4_20.csv"
+  },
+  "paper_path_semantics": "raw graph path; no shortcut smoothing",
+  "reported_seed_budgets": {
+    "wharton": 31440,
+    "humphreys": 156004,
+    "rainier": 218074
+  },
+  "trace": {
+    "paper_paths_modified": "2025-08-05T11:19:53-04:00",
+    "paper_csv_modified": "2025-08-15T10:29:14-04:00",
+    "regeneration_command_time": "2026-05-02T17:42:34-04:00",
+    "regeneration_command": "python3 IndependentPathPlanning/run_path_planning.py --maps wharton --planners abstractions --abstractions CLEAR --allow-build --cache-dir IndependentPathPlanning/cache_clear_wharton_flat0_min2 --clear-flatness-ratio 0.0 --clear-min-area 2 --output-dir IndependentPathPlanning/results_wharton_clear_flat0_min2",
+    "regenerated_wharton": {"seeds": 31440, "retained_regions": 30885, "edges": 145144},
+    "fresh_graph_matches_regeneration": true,
+    "fresh_paths_matching_archived_paths": 2
+  },
+  "known_missing_artifact": "the precise serialized CLEAR graph state used for the August 5, 2025 paper paths"
+}
