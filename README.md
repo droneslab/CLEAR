@@ -22,7 +22,7 @@ If you use this code or paper, cite:
 
 ## Code release
 
-The source code and reproducibility instructions are scheduled for release on **September 8, 2026**.
+The source code and reproducibility instructions will be released **soon**.
 
 Until then, the project website, paper, videos, and results are available on the [CLEAR project page](https://droneslab.github.io/CLEAR/).
 
