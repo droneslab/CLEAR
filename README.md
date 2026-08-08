@@ -4,6 +4,8 @@ Official code repository for **CLEAR**, a semantic-geometric terrain abstraction
 
 CLEAR has been accepted in **IEEE Robotics and Automation Letters (RA-L)** in **August 2026** (accepted on **August 7, 2026**). The paper is available on [arXiv](https://arxiv.org/abs/2601.13361).
 
+![CLEAR framework](https://raw.githubusercontent.com/droneslab/CLEAR/gh-pages/static/images/clear_hophy/clear_framework.png)
+
 ## Citation
 
 If you use this code or paper, cite:
