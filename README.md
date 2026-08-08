@@ -1,4 +1,4 @@
-# Standalone CLEAR abstraction and path planning
+# CLEAR abstraction and path planning
 
 This directory contains the complete Python code required to build the paper's
 CLEAR terrain abstraction and plan paths. It does not import code
@@ -129,18 +129,3 @@ The planning command runs all 20 paper queries by default and writes a JSON
 summary plus each NumPy path. Use `--query 0` for one query. Repeat with
 `--map humphreys` and `--map rainier` to recreate the CLEAR rows. Explicit
 options remain available for diagnostic, non-paper runs.
-
-## Reproducibility status
-
-The paper's reported CLEAR seed budgets are exactly 31,440 (W), 156,004 (H),
-and 218,074 (R). These must not be confused with the smaller counts retained
-after plane fitting. Input dtypes are preserved deliberately: coercing Wharton's
-`int16` elevation and `uint8` landcover arrays changed tied seed ordering and
-produced 30,889 regions. With the fix, a fresh build produces the traced 31,440
-seeds, 30,885 retained regions, 145,144 edges, and the same graph fingerprint as
-the May 2, 2026 regeneration.
-
-That regeneration reproduces only 2 of the 20 paths archived on August 5, 2025,
-so it is not the precise graph state used for the paper table. The archived paths
-still reproduce the CSV exactly. `SOURCE_SNAPSHOT.json` records the implementation
-and result provenance; the executable code does not validate against those values.
