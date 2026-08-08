@@ -32,7 +32,7 @@ from pathplanning import GraphPathPlanningPipeline  # noqa: E402
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--map", default="wharton", choices=PAPER_MAPS, help="Paper map profile.")
-    parser.add_argument("--map-file", type=Path, help="Override the profile's minimal_code/maps/<map>.pkl input.")
+    parser.add_argument("--map-file", type=Path, help="Override the profile's maps/<map>.pkl input.")
     parser.add_argument("--region-count", type=int, help="Override the paper CLEAR region budget.")
     parser.add_argument("--output", type=Path, help="Default: cache/<map>_clear.pkl.")
     parser.add_argument("--purpose", default="planning", choices=("planning", "decomposition"),
