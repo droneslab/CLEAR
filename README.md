@@ -26,6 +26,6 @@ If you use this code or paper, cite:
 
 The source code and reproducibility instructions will be released **soon**.
 
-Until then, the project website, paper, videos, and results are available on the [CLEAR project page](https://droneslab.github.io/CLEAR/).
+Until then, the project website (with CLEAR and the dedicated HOPHY page), paper, videos, and results are available on the [CLEAR project page](https://droneslab.github.io/CLEAR/).
 
 Please watch this repository for the release announcement.
