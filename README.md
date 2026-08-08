@@ -2,6 +2,8 @@
 
 Official code repository for **CLEAR**, a semantic-geometric terrain abstraction framework for scalable off-road planning.
 
+CLEAR has been accepted for publication in **IEEE Robotics and Automation Letters (RA-L)**. The paper is available on [arXiv](https://arxiv.org/abs/2601.13361).
+
 ## Code release
 
 The source code and reproducibility instructions are scheduled for release on **September 8, 2026**.
