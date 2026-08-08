@@ -4,6 +4,15 @@ This directory contains the complete Python code required to build the paper's
 CLEAR terrain abstraction and plan paths. It does not import code
 from any other repository directory.
 
+## Links
+
+- [Project page](https://droneslab.github.io/CLEAR/)
+- [Paper on arXiv](https://arxiv.org/abs/2601.13361)
+
+## Framework
+
+![CLEAR framework: landcover and elevation, decomposition, surface regression, and graph encoding](static/images/clear_hophy/clear_framework.png)
+
 ## Contents
 
 - `build_abstraction.py`: builds an abstraction graph from terrain arrays.
