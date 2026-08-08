@@ -12,7 +12,7 @@ and elevation for scalable path planning across large unstructured environments.
 
 ## Framework
 
-![CLEAR framework: landcover and elevation, decomposition, surface regression, and graph encoding](static/images/clear_hophy/clear_framework.png)
+![CLEAR framework: landcover and elevation, decomposition, surface regression, and graph encoding](images/clear_framework.png)
 
 ## Contents
 
