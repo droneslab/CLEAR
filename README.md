@@ -1,9 +1,8 @@
-# CLEAR + HOPHY Project Page
+# CLEAR Project Page
 
-Static project webpage for showcasing CLEAR and HOPHY, two large-scale off-road planning systems:
+Static project webpage for showcasing CLEAR, a large-scale off-road planning system:
 
 - **CLEAR**: semantic-geometric terrain abstraction for scalable off-road planning.
-- **HOPHY**: hierarchical hypergraph planning for repeated queries, replanning, and multi-agent missions.
 
 The page follows an academic project-page style similar to the E3D webpage and is designed for hosting through GitHub Pages or any static web server.
 
@@ -22,9 +21,8 @@ CLEAR_HOPHY/
 
 Main assets:
 
-- `static/images/clear_hophy/`: CLEAR and HOPHY figures used in the webpage.
+- `static/images/clear_hophy/`: CLEAR figures used in the webpage.
 - `static/videos/CLEAR_RAL_suppl_video.mp4`: CLEAR supplementary video.
-- `static/videos/HOPHY_Overview.mp4`: HOPHY overview video.
 - `static/images/ub_logo.png`: University at Buffalo logo.
 - `static/images/drones_logo.png`: Drones Lab logo.
 
@@ -55,7 +53,6 @@ Do not add local paper PDFs to this repository. Add paper links only when a publ
 Current paper links:
 
 - CLEAR: https://arxiv.org/abs/2601.13361
-- HOPHY: not linked yet because no public paper URL is currently included.
 
 ## Updating Videos
 
@@ -64,7 +61,7 @@ Replace the files in `static/videos/` with the final videos when available. Keep
 Expected filenames:
 
 - `CLEAR_RAL_suppl_video.mp4`
-- `HOPHY_Overview.mp4`
+- `CLEAR_RAL_suppl_video.mp4`
 
 ## Updating Content
 

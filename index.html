@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="CLEAR and HOPHY for large-scale off-road terrain abstraction and mission planning.">
-  <meta property="og:title" content="CLEAR + HOPHY: Large-Scale Off-Road Planning">
-  <meta property="og:description" content="Semantic-geometric terrain abstraction and hierarchical hypergraph planning.">
+  <meta name="description" content="CLEAR for large-scale off-road terrain abstraction and planning.">
+  <meta property="og:title" content="CLEAR: Large-Scale Off-Road Planning">
+  <meta property="og:description" content="Semantic-geometric terrain abstraction for scalable off-road planning.">
   <meta property="og:url" content="https://droneslab.github.io/clear-hophy">
   <meta property="og:image" content="static/images/clear_hophy/clear_framework.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta name="twitter:title" content="CLEAR + HOPHY">
+  <meta name="twitter:title" content="CLEAR">
   <meta name="twitter:description" content="Large-scale off-road planning with terrain abstractions.">
   <meta name="twitter:image" content="static/images/clear_hophy/clear_framework.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="keywords" content="off-road planning, terrain abstraction, CLEAR, HOPHY, hypergraph planning, robotics">
+  <meta name="keywords" content="off-road planning, terrain abstraction, CLEAR, robotics">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>CLEAR + HOPHY: Large-Scale Off-Road Planning</title>
+  <title>CLEAR: Large-Scale Off-Road Planning</title>
   <link rel="icon" type="image/png" href="static/images/drones_logo.png">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="static/css/bulma.min.css">
@@ -39,7 +39,7 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">
-              <span style="color: rgb(0, 45, 248)">CLEAR + HOPHY</span>: Large-Scale Off-Road Planning with Terrain Abstractions
+              <span style="color: rgb(0, 45, 248)">CLEAR</span>: Large-Scale Off-Road Planning with Terrain Abstractions
             </h1>
 
             <div class="is-size-5 publication-authors">
@@ -87,7 +87,7 @@
             <div class="content has-text-justified">
               <img style="width:100%;" src="static/images/clear_hophy/clear_all_paths.png" alt="Large-scale planning paths on Wharton, Humphrey, and Rainier maps">
               <p>
-                Large-scale off-road planning requires repeated route queries over terrain maps spanning 9--100 km<sup>2</sup>. CLEAR builds a reusable semantic-geometric terrain graph, while HOPHY uses hierarchy and hypergraphs to support fast repeated queries, local condition updates, and multi-agent mission planning.
+                Large-scale off-road planning requires route optimization over terrain maps spanning 9--100 km<sup>2</sup>. CLEAR builds a reusable semantic-geometric terrain graph for scalable planning.
               </p>
             </div>
           </div>
@@ -106,10 +106,7 @@
               Long-horizon navigation in unstructured environments demands terrain abstractions that scale to tens of square kilometers while preserving semantic and geometric structure. Existing grids scale poorly, while quadtrees can misalign with terrain boundaries and omit landcover semantics that matter for traversability-aware planning.
             </p>
             <p>
-              CLEAR addresses the representation problem by constructing a reusable terrain abstraction from landcover and elevation. It produces convex, semantically aligned regions encoded as a terrain-aware graph. HOPHY builds on this abstraction for mission-scale planning: it compresses map-scale terrain into geometric-semantic nodes and coarse regions, then uses typed hyperedges to update terrain constraints under changing weather or agent-specific costs.
-            </p>
-            <p>
-              Across kilometer-scale maps, CLEAR reduces per-query planning time while preserving executability in physics-based simulation. HOPHY further reduces query time to the millisecond regime, supports localized replanning, and enables fast multi-agent path-cost estimation for large off-road missions.
+              CLEAR addresses the representation problem by constructing a reusable terrain abstraction from landcover and elevation. It produces convex, semantically aligned regions encoded as a terrain-aware graph. Across kilometer-scale maps, CLEAR reduces per-query planning time while preserving executability in physics-based simulation.
             </p>
           </div>
         </div>
@@ -140,52 +137,6 @@
     </div>
   </section>
 
-  <section class="section hero is-light">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column">
-          <h2 class="title is-3">HOPHY: Hierarchical Hypergraph Planning</h2>
-          <div class="content has-text-justified">
-            <p>
-              HOPHY targets mission-level settings where path planning is an inner-loop primitive for task allocation, course-of-action comparison, and replanning after terrain changes. Pixel-level planners are accurate but too slow for many repeated queries, while flat abstractions do not provide the hierarchy and localized updates needed for dynamic missions.
-            </p>
-            <p>
-              HOPHY represents terrain with GSNodes and coarse regions. GSNodes aggregate connected terrain with consistent landcover and elevation or grade statistics, and coarse regions group GSNodes for large-scale reasoning. Typed hyperedges encode terrain and contextual constraints such as landcover, grade, weather, and agent feasibility. When conditions change, HOPHY filters affected GSNode sets instead of recomputing the full graph.
-            </p>
-            <img style="width:100%;" src="static/images/clear_hophy/hophy_framework.png" alt="HOPHY hierarchical hypergraph framework">
-            <h6>
-              HOPHY hierarchy and planning framework: terrain inputs are abstracted into Fine Regions, GSNodes, coarse regions, and typed hyperedges for fast multi-agent path planning.
-            </h6>
-            <h3 class="title is-4 path-visualization-title">Path Planned Visualization</h3>
-            <div class="path-visualization-grid">
-              <figure>
-                <img src="static/images/clear_hophy/wharton_pair0_isometric_flat_hierarchy_tight.gif" alt="HOPHY planned path visualization on Wharton">
-                <figcaption>
-                  <strong>Wharton</strong>
-                  <span>HOPHY expands the hierarchy from coarse regions to GSNodes, then refines the selected corridor into a continuous path between the start and goal.</span>
-                </figcaption>
-              </figure>
-              <figure>
-                <img src="static/images/clear_hophy/humphrey_pair0_isometric_flat_hierarchy_tight.gif" alt="HOPHY planned path visualization on Humphrey">
-                <figcaption>
-                  <strong>Humphrey</strong>
-                  <span>The search progresses over a larger terrain abstraction, pruning irrelevant regions before committing to the feasible route corridor.</span>
-                </figcaption>
-              </figure>
-              <figure>
-                <img src="static/images/clear_hophy/ub_campus_pair1_isometric_flat_hierarchy_tight.gif" alt="HOPHY planned path visualization on UB Campus">
-                <figcaption>
-                  <strong>UB Campus</strong>
-                  <span>The same coarse-to-fine query process transfers to a campus-scale map, illustrating route generation across compact local terrain.</span>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="section hero">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
@@ -199,22 +150,8 @@
             <h6>
               CLEAR planning and BeamNG simulation results on Wharton, Humphrey, and Rainier terrain maps.
             </h6>
-            <p>
-              HOPHY keeps median cost delta at 0.00% relative to pixel-level A* on Wharton, Humphrey, and Rainier, while reducing median query time by 68x--1280x in the paper results. Under rain and localized blockage updates, HOPHY maintains near-A* path quality with sub-186 ms mean query time across all maps.
-            </p>
-            <img style="width:100%;" src="static/images/clear_hophy/hophy_distance_time.png" alt="HOPHY query time and path quality results">
             <h6>
-              HOPHY remains in the millisecond query-time regime while preserving path quality close to the pixel-level reference.
-            </h6>
-            <div class="results-media-row">
-              <img src="static/images/clear_hophy/hophy_rain_scatter.png" alt="HOPHY replanning result">
-              <video autoplay muted loop playsinline controls aria-label="HOPHY COA animation for 5 agents and 50 tasks">
-                <source src="static/videos/animation_multivehicle_Wharton.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <h6>
-              Dynamic replanning and multi-agent mission planning: typed hyperedges support local updates, and the maintained hierarchy enables fast path-cost estimation for heterogeneous teams.
+              CLEAR planning and BeamNG simulation results on Wharton, Humphrey, and Rainier terrain maps.
             </h6>
           </div>
         </div>
@@ -235,13 +172,6 @@
             <h6>
               CLEAR supplementary video showing the terrain abstraction and planning pipeline.
             </h6>
-            <video controls width="100%" style="border-radius: 8px; max-width: 900px; margin-top: 2rem;">
-              <source src="static/videos/HOPHY_Overview.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <h6>
-              HOPHY overview video showing hierarchical hypergraph planning for large-scale off-road missions.
-            </h6>
           </div>
         </div>
       </div>
@@ -261,7 +191,7 @@
   year={2026}
 }
 
-HOPHY: TBD</code></pre>
+ </code></pre>
           </div>
         </div>
       </div>
