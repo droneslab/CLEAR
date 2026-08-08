@@ -4,6 +4,8 @@ This directory contains the complete Python code required to build the paper's
 CLEAR terrain abstraction and plan paths. It does not import code
 from any other repository directory.
 
+**Accepted to IEEE Robotics and Automation Letters (RA-L), August 2026.**
+
 ## Links
 
 - [Project page](https://droneslab.github.io/CLEAR/)
