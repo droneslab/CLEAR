@@ -139,3 +139,14 @@ The planning command runs all 20 paper queries by default and writes a JSON
 summary plus each NumPy path. Use `--query 0` for one query. Repeat with
 `--map humphreys` and `--map rainier` to recreate the CLEAR rows. Explicit
 options remain available for diagnostic, non-paper runs.
+
+## Citation
+
+```bibtex
+@article{meshram2026clear,
+  title={CLEAR: A Semantic-Geometric Terrain Abstraction for Large-Scale Unstructured Environments},
+  author={Meshram, Pranay and Adhivarahan, Charuvahan and Esfahani, Ehsan Tarkesh and Chowdhury, Souma and Wang, Chen and Dantu, Karthik},
+  journal={arXiv preprint arXiv:2601.13361},
+  year={2026}
+}
+```
