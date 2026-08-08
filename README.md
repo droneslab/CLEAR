@@ -1,8 +1,7 @@
 # CLEAR abstraction and path planning
 
-This directory contains the complete Python code required to build the paper's
-CLEAR terrain abstraction and plan paths. It does not import code
-from any other repository directory.
+CLEAR builds a reusable semantic-geometric terrain abstraction from landcover
+and elevation for scalable path planning across large unstructured environments.
 
 **Accepted to IEEE Robotics and Automation Letters (RA-L), August 2026.**
 
