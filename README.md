@@ -100,7 +100,7 @@ The default Wharton build uses 31,440 seeds, `alpha_bdy=0`, minimum area 2,
 cache/wharton_clear.pkl
 ```
 
-### 4. Plan all 20 paper queries
+### 4. Path planning on a Map
 
 ```bash
 python plan_path.py --map wharton
