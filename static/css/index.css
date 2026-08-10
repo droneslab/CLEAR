@@ -2,6 +2,64 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
+.page-shell {
+  max-width: 1180px;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.section.hero {
+  padding-top: 2.4rem;
+  padding-bottom: 2.4rem;
+}
+
+.text-rail {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.intro-copy {
+  font-size: 1.08rem;
+  margin: 1.25rem auto 1.75rem;
+  color: #344258;
+  max-width: 860px;
+}
+
+.hero-figure {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.publication-title {
+  letter-spacing: -0.01em;
+}
+
+.publication-awards {
+  background: rgba(0, 102, 255, 0.12);
+  border: 1px solid rgba(0, 102, 255, 0.2);
+  color: #003f9a !important;
+  display: inline-block;
+  font-weight: 700;
+  margin-top: 0.6rem;
+  padding: 0.42rem 0.72rem;
+  border-radius: 999px;
+}
+
+.logo-row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+}
+
+.logo-row img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+}
+
 
 .footer .icon-link {
     font-size: 25px;
@@ -62,7 +120,6 @@ body {
 }
 
 .publication-awards {
-    color: #ff3860;
     width: fit-content;
     font-weight: bolder;
 }

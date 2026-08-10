@@ -33,9 +33,9 @@
   <script src="static/js/index.js"></script>
 </head>
 <body>
-  <section class="hero">
+  <section id="videos" class="hero">
     <div class="hero-body">
-      <div class="container is-max-desktop">
+      <div class="container is-max-widescreen page-shell">
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">
@@ -56,22 +56,35 @@
             <div class="is-size-5 publication-authors">
               <span class="author-block">Department of Computer Science and Engineering, University at Buffalo</span><br>
               <span class="author-block">Department of Mechanical and Aerospace Engineering, University at Buffalo</span>
-              <span class="author-block" style="display:inline-block; margin-top:0.45rem; padding:0.35rem 0.65rem; border-radius: 0.45rem; background:rgba(0, 102, 255, 0.12); color:#003f9a; font-weight:700;">Accepted for publication in IEEE Robotics and Automation Letters (RA-L), August 2026</span>
+              <span class="publication-awards">Accepted for publication in IEEE Robotics and Automation Letters (RA-L), August 2026</span>
             </div>
 
-            <div class="is-size-5 publication-authors">
+            <div class="is-size-5 publication-authors logo-row">
               <a href="https://www.buffalo.edu/" target="_blank">
-                <img style="width:30%; padding-right: 15px;" src="static/images/ub_logo.png" alt="University at Buffalo logo">
+                <img src="static/images/ub_logo.png" alt="University at Buffalo logo">
               </a>
               <a href="http://drones.cse.buffalo.edu/" target="_blank">
-                <img style="width:30%; height:auto; padding-bottom: 25px;" src="static/images/drones_logo.png" alt="Drones Lab logo">
+                <img src="static/images/drones_logo.png" alt="Drones Lab logo">
               </a>
               <a href="https://www.onr.navy.mil/" target="_blank">
-                <img style="width:20%; height:auto; padding-bottom: 25px;" src="https://upload.wikimedia.org/wikipedia/commons/2/29/Office_of_Naval_Research_Official_Logo.png" alt="Office of Naval Research logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Office_of_Naval_Research_Official_Logo.png" alt="Office of Naval Research logo">
               </a>
               <a href="https://www.moog.com/" target="_blank">
-                <img style="width:20%; height:auto; padding-bottom: 25px;" src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Moog_logo.svg" alt="Moog Inc. logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Moog_logo.svg" alt="Moog Inc. logo">
               </a>
+            </div>
+
+            <div class="content has-text-centered">
+              <h2 class="title is-4">Video Presentation</h2>
+              <div class="video-preview" style="max-width: 920px; margin: 0 auto;">
+                <video controls width="100%" style="border-radius: 8px;">
+                  <source src="static/videos/CLEAR_RAL_suppl_video.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <p class="has-text-centered" style="margin-top: 0.65rem; margin-bottom: 1.1rem;">
+                CLEAR supplementary video showing the terrain abstraction and planning pipeline.
+              </p>
             </div>
 
             <div class="column has-text-centered">
@@ -79,7 +92,7 @@
                 <span class="link-block">
                   <a href="https://arxiv.org/abs/2601.13361" target="_blank" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                    <span>CLEAR Paper</span>
+                    <span>Paper</span>
                   </a>
                 </span>
                 <span class="link-block">
@@ -91,11 +104,11 @@
               </div>
             </div>
 
-            <div class="content has-text-justified">
-              <img style="width:100%;" src="static/images/clear_hophy/clear_all_paths.png" alt="Large-scale planning paths on Wharton, Humphrey, and Rainier maps">
-              <p>
-                Large-scale off-road planning requires route optimization over terrain maps spanning 9--100 km<sup>2</sup>. CLEAR builds a reusable semantic-geometric terrain graph for scalable planning.
-              </p>
+            <div class="content has-text-justified text-rail">
+              <div class="intro-copy">
+                CLEAR is a semantic-geometric terrain abstraction framework for large-scale off-road planning. It converts dense terrain maps into reusable, semantically aligned regions so planners can scale from local scenes to map-wide missions with reliable behavior.
+              </div>
+              <img class="hero-figure" src="static/images/clear_hophy/clear_all_paths.png" alt="Large-scale planning paths on Wharton, Humphrey, and Rainier maps">
             </div>
           </div>
         </div>
@@ -104,11 +117,11 @@
   </section>
 
   <section class="section hero is-light">
-    <div class="container is-max-desktop">
+    <div class="container is-max-widescreen page-shell">
       <div class="columns is-centered has-text-centered">
         <div class="column">
           <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
+          <div class="content has-text-justified text-rail">
             <p>
               Long-horizon navigation in unstructured environments demands terrain abstractions that scale to tens of square kilometers while preserving semantic and geometric structure. Existing grids scale poorly, while quadtrees can misalign with terrain boundaries and omit landcover semantics that matter for traversability-aware planning.
             </p>
@@ -122,11 +135,11 @@
   </section>
 
   <section class="section hero">
-    <div class="container is-max-desktop">
+    <div class="container is-max-widescreen page-shell">
       <div class="columns is-centered has-text-centered">
         <div class="column">
           <h2 class="title is-3">CLEAR: Terrain Abstraction</h2>
-          <div class="content has-text-justified">
+          <div class="content has-text-justified text-rail">
             <p>
               CLEAR operates through Boundary-Seed Decomposition, recursive plane fitting, and graph encoding. Boundary-Seed Decomposition places seeds in flat regions and along high-entropy semantic boundaries, then uses Voronoi partitioning to form compact convex regions. Plane fitting approximates elevation within each region and recursively subdivides regions whose error exceeds a tolerance. The final abstraction stores landcover, elevation geometry, convex boundaries, and adjacency for graph search.
             </p>
@@ -145,52 +158,30 @@
   </section>
 
   <section class="section hero">
-    <div class="container is-max-desktop">
+    <div class="container is-max-widescreen page-shell">
       <div class="columns is-centered has-text-centered">
         <div class="column">
           <h2 class="title is-3">Results</h2>
-          <div class="content has-text-justified">
-            <p>
-              CLEAR is evaluated on 9--100 km<sup>2</sup> digital terrain maps with physics-based simulation. It reduces per-query planning time over unabstracted raw-grid A* after one-time abstraction and achieves 100% task completion across the evaluated maps in simulation.
-            </p>
-            <img style="width:100%;" src="static/images/clear_hophy/clear_beamng.png" alt="CLEAR planning and simulation results">
-            <h6>
-              CLEAR planning and BeamNG simulation results on Wharton, Humphrey, and Rainier terrain maps.
-            </h6>
-            <h6>
-              CLEAR planning and BeamNG simulation results on Wharton, Humphrey, and Rainier terrain maps.
-            </h6>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="videos" class="section hero is-light">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column">
-          <h2 class="title is-3">Video Presentation</h2>
-          <div class="content has-text-centered">
-            <video controls width="100%" style="border-radius: 8px; max-width: 900px;">
-              <source src="static/videos/CLEAR_RAL_suppl_video.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <h6>
-              CLEAR supplementary video showing the terrain abstraction and planning pipeline.
-            </h6>
-          </div>
+            <div class="content has-text-justified text-rail">
+              <p>
+                CLEAR is evaluated on 9--100 km<sup>2</sup> digital terrain maps with physics-based simulation. It reduces per-query planning time over unabstracted raw-grid A* after one-time abstraction and achieves 100% task completion across the evaluated maps in simulation.
+              </p>
+              <img style="width:100%;" src="static/images/clear_hophy/clear_beamng.png" alt="CLEAR planning and simulation results">
+              <h6>
+                CLEAR planning and BeamNG simulation results on Wharton, Humphrey, and Rainier terrain maps.
+              </h6>
+            </div>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section hero">
-    <div class="container is-max-desktop">
+    <div class="container is-max-widescreen page-shell">
       <div class="columns is-centered has-text-centered">
         <div class="column">
           <h2 class="title is-3">BibTeX</h2>
-          <div class="content has-text-justified">
+          <div class="content has-text-justified text-rail">
 <pre><code>@article{meshram2026clear,
   title={CLEAR: A Semantic-Geometric Terrain Abstraction for Large-Scale Unstructured Environments},
   author={Meshram, Pranay and Adhivarahan, Charuvahan and Esfahani, Ehsan Tarkesh and Chowdhury, Souma and Wang, Chen and Dantu, Karthik},
